@@ -2,10 +2,11 @@
   "name": "etapa2",
   "version": "1.0.0",
   "description": "API para o Departamento de Polícia",
-  "main": "server.js",
+  "main": "dist/server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node dist/server.js",
     "build": "tsc",
+    "build-and-start": "npm run build && npm start",
     "dev": "ts-node-dev server.ts --respawn --transpile-only",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -15,10 +16,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/uuid": "^10.0.0",
     "etapa2": "file:",
     "express": "^4.19.2",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1",
+    "uuid": "^11.1.0",
     "zod": "^4.0.10"
   },
   "devDependencies": {
