@@ -2,9 +2,9 @@
   "name": "etapa2",
   "version": "1.0.0",
   "description": "API para o Departamento de Polícia",
-  "main": "dist/server.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node dist/server.js",
+    "start": "node server.js",
     "build": "tsc",
     "build-and-start": "npm run build && npm start",
     "dev": "ts-node-dev server.ts --respawn --transpile-only",
