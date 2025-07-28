@@ -4,9 +4,9 @@
   "description": "API para o Departamento de Polícia",
   "main": "server.js",
   "scripts": {
-    "start": "ts-node server.ts",
+    "start": "node server.js",
     "build": "tsc",
-    "serve": "node dist/server.js",
+    "dev": "ts-node-dev server.ts --respawn --transpile-only",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
