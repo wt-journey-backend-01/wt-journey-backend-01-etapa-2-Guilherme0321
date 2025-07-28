@@ -9,11 +9,11 @@ const casos: CasoPayload[] = [
         agente_id: "401bccf5-cf9e-489d-8412-446cd169a0f1"
     },
     {
-        id: "c1a9b8e7-6d5c-4f3b-2a19-8e7d6c5b4a32",
+        id: "c1a9b8e7-6d5c-4f3b-8a19-1e2d3c4a5b6f",
         titulo: "roubo de veículo",
         descricao: "Um carro foi roubado no estacionamento do shopping às 15:00 do dia 05/01/2023.",
         status: "solucionado",
-        agente_id: "a2b8e2f9-3d1a-4c6b-9b8e-3d1a4c6b9b8e"
+        agente_id: "a2b8e2f9-3d1a-4c6b-9b8e-f1d2c3a4b5e6"
     }
 ];
 
