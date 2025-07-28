@@ -3,10 +3,32 @@ import * as casosRepository from "../repositories/casosRepository";
 import * as agentesRepository from "../repositories/agentesRepository";
 import casoSchema from '../schemas/casoSchema';
 
-export function getAllCasos(req: Request, res: Response) {
-    const { agente_id, status } = req.query;
-    const casos = casosRepository.findAll(agente_id as string, status as string);
-    res.json(casos);
+export function getAllCasos(req: Request, res: Response, next: NextFunction) {
+    try {
+        const { agente_id, status } = req.query;
+        
+        // Validar agente_id se fornecido
+        if (agente_id && typeof agente_id !== 'string') {
+            return res.status(400).json({ error: "Parâmetro 'agente_id' deve ser uma string UUID." });
+        }
+        
+        // Validar status se fornecido
+        if (status && typeof status !== 'string') {
+            return res.status(400).json({ error: "Parâmetro 'status' deve ser uma string." });
+        }
+        
+        // Validar valores de status permitidos
+        if (status && !['aberto', 'solucionado'].includes(status)) {
+            return res.status(400).json({ 
+                error: "Parâmetro 'status' deve ser 'aberto' ou 'solucionado'." 
+            });
+        }
+        
+        const casos = casosRepository.findAll(agente_id as string, status as string);
+        res.json(casos);
+    } catch (error) {
+        next(error);
+    }
 }
 
 export function getCasoById(req: Request, res: Response, next: NextFunction) {
